@@ -1,87 +1,95 @@
 1
-00:00:00,080 --> 00:00:01,358
-3% down in Dubai
+00:00:00,080 --> 00:00:01,473
+Think 3% down buys
 
 2
-00:00:01,358 --> 00:00:02,833
-sounds tiny, until the
+00:00:01,473 --> 00:00:02,890
+Dubai cheap? Look at
 
 3
-00:00:02,833 --> 00:00:03,813
-fee beats it.
+00:00:02,890 --> 00:00:03,557
+day one.
 
 4
-00:00:03,933 --> 00:00:06,647
-At 889K, booking is
+00:00:03,677 --> 00:00:05,900
+Booking is 27K; fees
 
 5
-00:00:06,647 --> 00:00:09,224
-27K; fees hit 40K.
+00:00:05,900 --> 00:00:08,202
+hit 40K. That's 60%
 
 6
-00:00:09,344 --> 00:00:11,242
-October ready sales just
+00:00:08,202 --> 00:00:09,565
+lost to fees.
 
 7
-00:00:11,242 --> 00:00:15,509
-beat off-plan: 18.1B versus 16.7B.
+00:00:09,685 --> 00:00:12,585
+Before 2029 keys, 520K
 
 8
-00:00:15,629 --> 00:00:17,528
-54% plus fees lock
+00:00:12,585 --> 00:00:14,635
+locks up earning zero rent.
 
 9
-00:00:17,528 --> 00:00:20,216
-early; 46% waits for keys.
+00:00:14,755 --> 00:00:16,412
+Wait, walk next door:
 
 10
-00:00:20,336 --> 00:00:22,945
-Meanwhile, 209 finished neighbor
+00:00:16,412 --> 00:00:19,768
+209 built homes averaged 323K.
 
 11
-00:00:22,945 --> 00:00:25,456
-sales averaged 323K dirhams.
+00:00:19,908 --> 00:00:21,685
+Same size, nearly triple
 
 12
-00:00:25,576 --> 00:00:27,986
-Buying new asks 2.75X
+00:00:21,685 --> 00:00:23,919
+the price: 566K extra
 
 13
-00:00:27,986 --> 00:00:29,629
-more, plus years waiting.
+00:00:23,919 --> 00:00:25,028
+just to wait.
 
 14
-00:00:29,769 --> 00:00:31,515
-And 57 listed Dubailand
+00:00:25,168 --> 00:00:27,240
+When reselling, 57 competing
 
 15
-00:00:31,515 --> 00:00:33,716
-launches could compete at exit.
+00:00:27,240 --> 00:00:29,051
+launches stack up nearby.
 
 16
-00:00:33,836 --> 00:00:35,783
-Post-handover terms and active
+00:00:29,171 --> 00:00:30,771
+Ready sales now beat
 
 17
-00:00:35,783 --> 00:00:37,466
-resales keep SKID's score
+00:00:30,771 --> 00:00:34,269
+off-plan: 18.1B to 16.7B.
 
 18
-00:00:37,466 --> 00:00:38,508
-at 6.6.
+00:00:34,389 --> 00:00:36,392
+Still, delaying 46% past
 
 19
-00:00:38,648 --> 00:00:40,048
-Check day-one fees and
+00:00:36,392 --> 00:00:38,465
+handover eases cash, keeping
 
 20
-00:00:40,048 --> 00:00:41,933
-built sales next door first.
+00:00:38,465 --> 00:00:39,957
+SKID at 6.6.
 
 21
-00:00:42,053 --> 00:00:43,085
-Inspect the full audit
+00:00:40,097 --> 00:00:41,701
+Always compare day-one fees
 
 22
-00:00:43,085 --> 00:00:44,421
+00:00:41,701 --> 00:00:43,319
+and next-door sales first.
+
+23
+00:00:43,439 --> 00:00:44,368
+Check any tower free
+
+24
+00:00:44,368 --> 00:00:45,657
 on skid.homes.
