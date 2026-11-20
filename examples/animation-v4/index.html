@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKID Pure 2D Animation Pilot (V4 — Zero UI Elements)</title>
+  <style>
+    :root {
+      --bg: #f6f3ec;
+      --card: #ffffff;
+      --ink: #1e2538;
+      --muted: #5a657d;
+      --accent: #6d4aff;
+      --emerald: #22a076;
+      --coral: #e85450;
+      --border: #e5dfd2;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 28px 20px 56px;
+    }
+    .wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 18px;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.15;
+    }
+    .sub {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 840px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.85fr) minmax(300px, 0.95fr);
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .panel {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 12px 32px rgba(30, 37, 56, 0.06);
+    }
+    .panel-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+    .panel-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .player-16x9 {
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+    .player-9x16 {
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
+    .chapters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .ch-btn {
+      background: #f8f6f1;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      border-radius: 9px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .ch-btn:hover {
+      background: #ede8ff;
+      border-color: var(--accent);
+    }
+    .ch-btn span {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--accent);
+      margin-right: 5px;
+      font-weight: 700;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      flex: 1;
+      min-width: 145px;
+      text-align: center;
+      padding: 11px 14px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: #f8f6f1;
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+    .note {
+      font-size: 12.5px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="tag">SKID Pure 2D Animation Pilot (V4 · Zero UI Chrome)</div>
+      <h1>Once You See the Math Behind a &ldquo;3% Down&rdquo; Dubai Ad</h1>
+      <p class="sub">
+        100% full-canvas 2D character &amp; whiteboard animation — zero dashboard cards, zero navbars, zero progress bars, zero boxed TikTok captions. Follows one simple, easy-to-follow story (<strong>Ali</strong>) grounded in verified Dubai Land Department registry data. Closed captions (CC) are toggleable inside the player.
+      </p>
+    </header>
+
+    <section class="grid">
+      <!-- 16:9 FULL YOUTUBE ANIMATION -->
+      <article class="panel">
+        <div>
+          <h2 class="panel-title">1. Full YouTube Animation (16:9 · 2m 41s)</h2>
+          <p class="panel-desc">1920×1080 @ 24fps · 4 simple rules told through Ali's story · Calm mentor voice + 92 BPM felt piano (-14 LUFS)</p>
+        </div>
+
+        <div class="player-16x9">
+          <video id="yt-video" controls playsinline preload="metadata" poster="./thumbnail_16x9.png">
+            <source src="./skid_v4_anim_yt_16x9.mp4" type="video/mp4" />
+            <track label="English" kind="subtitles" srclang="en" src="./subtitles_16x9.vtt" />
+          </video>
+        </div>
+
+        <div class="chapters" aria-label="Jump to scene">
+          <button class="ch-btn" type="button" onclick="seekYt(0)"><span>0:00</span>The 3% Billboard</button>
+          <button class="ch-btn" type="button" onclick="seekYt(18.2)"><span>0:18</span>01 · Day-1 Fees</button>
+          <button class="ch-btn" type="button" onclick="seekYt(50.3)"><span>0:50</span>02 · Cost of Waiting</button>
+          <button class="ch-btn" type="button" onclick="seekYt(75.1)"><span>1:15</span>03 · Walk Next Door</button>
+          <button class="ch-btn" type="button" onclick="seekYt(103.7)"><span>1:44</span>04 · Crowded Exit</button>
+          <button class="ch-btn" type="button" onclick="seekYt(127.1)"><span>2:07</span>3 Simple Checks</button>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="./skid_v4_anim_yt_16x9.mp4" download>Download 16:9 MP4</a>
+          <a class="btn btn-secondary" href="./thumbnail_16x9.png" target="_blank" rel="noopener">Open Thumbnail</a>
+          <a class="btn btn-secondary" href="./subtitles_16x9.srt" download>Download .SRT</a>
+        </div>
+      </article>
+
+      <!-- 9:16 VERTICAL SHORT ANIMATION -->
+      <article class="panel">
+        <div>
+          <h2 class="panel-title">2. Vertical Short Animation (9:16 · 53s)</h2>
+          <p class="panel-desc">1080×1920 @ 30fps · Pure vertical whiteboard animation with zero UI clutter</p>
+        </div>
+
+        <div class="player-9x16">
+          <video controls playsinline preload="metadata" poster="./cover_9x16.png">
+            <source src="./skid_v4_anim_short_9x16.mp4" type="video/mp4" />
+            <track label="English" kind="subtitles" srclang="en" src="./subtitles_9x16.vtt" />
+          </video>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="./skid_v4_anim_short_9x16.mp4" download>Download 9:16 MP4</a>
+          <a class="btn btn-secondary" href="./cover_9x16.png" target="_blank" rel="noopener">Open Cover</a>
+        </div>
+      </article>
+    </section>
+
+    <p class="note">
+      Verified Dubai registry example: Treppan Vision (AED 889K ask · 3% = AED 26,670 vs AED 39,760 Day-1 gov + admin fees · AED 519,820 before Oct 2029 · 209 built neighbors averaged AED 322,738 · 57 competing launches). Starting prices exclude 2%–4% registration fees. Educational only, not financial advice.
+    </p>
+  </main>
+
+  <script>
+    function seekYt(sec) {
+      const v = document.getElementById("yt-video");
+      if (!v) return;
+      v.currentTime = sec;
+      v.play().catch(() => {});
+    }
+  </script>
+</body>
+</html>
