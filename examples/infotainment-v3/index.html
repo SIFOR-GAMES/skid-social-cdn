@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKID Infotainment V3 Pilot — Whiteboard &amp; 2D Flat-Vector Preview</title>
+  <style>
+    :root {
+      --bg: #0c101b;
+      --slate: #121826;
+      --card: #161d2f;
+      --paper: #faf7f2;
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #7c3aed;
+      --accent-soft: rgba(124, 58, 237, 0.18);
+      --emerald: #10b981;
+      --coral: #ef4444;
+      --border: rgba(255, 255, 255, 0.11);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background:
+        radial-gradient(circle at 18% 8%, rgba(124, 58, 237, 0.20), transparent 44%),
+        radial-gradient(circle at 86% 92%, rgba(16, 185, 129, 0.14), transparent 46%),
+        var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 28px 20px 56px;
+    }
+    .wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(167, 139, 250, 0.38);
+      color: #ddd6fe;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      display: inline-block;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.15;
+      color: var(--paper);
+      letter-spacing: -0.015em;
+    }
+    h1 em {
+      color: #fda4af;
+      font-style: italic;
+    }
+    .sub {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 860px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.85fr) minmax(300px, 0.95fr);
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.42);
+    }
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .panel-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      color: var(--paper);
+      line-height: 1.25;
+    }
+    .meta-pill {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #6ee7b7;
+      white-space: nowrap;
+    }
+    .meta-pill.violet {
+      background: rgba(124, 58, 237, 0.20);
+      border-color: rgba(167, 139, 250, 0.38);
+      color: #ddd6fe;
+    }
+    .panel-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .player-16x9 {
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+    .player-9x16 {
+      background: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
+    .chapters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .ch-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      border-radius: 10px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .ch-btn:hover {
+      background: rgba(124, 58, 237, 0.24);
+      border-color: rgba(167, 139, 250, 0.50);
+    }
+    .ch-btn span {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: #a78bfa;
+      margin-right: 5px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      padding: 11px 14px;
+      border-radius: 11px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+    .btn:hover { opacity: 0.92; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--ink);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .facts {
+      background: var(--slate);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #cbd5e1;
+    }
+    .facts h3 {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6ee7b7;
+      margin-bottom: 6px;
+    }
+    .facts strong { color: var(--paper); }
+    .disclaimer {
+      font-size: 12px;
+      color: #64748b;
+      text-align: center;
+      padding-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="badge"><span class="dot"></span>SKID Infotainment V3 Pilot · Whiteboard &amp; 2D Flat-Vector System</div>
+      <h1>Once You Understand <em>Dubai Off-Plan Math,</em> 4 Traps Stop Working.</h1>
+      <p class="sub">
+        Hybrid chapter-contrast visual language pairing Matte Ink Slate (<code>#121826</code>) hooks &amp; chapter cards with Warm Ivory Whiteboard (<code>#FAF7F2</code>) progressive SVG diagrams and bespoke 2D flat-vector editorial illustrations. Calm mentor narration + 92 BPM minimalist felt-piano bed mastered to <code>-14 LUFS</code>.
+      </p>
+    </header>
+
+    <section class="grid">
+      <!-- 16:9 FULL YOUTUBE LESSON -->
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">1. Full YouTube Infotainment Lesson (4 Chapters)</h2>
+            <p class="panel-desc">1920×1080 @ 24fps · 3m 35s · 7 verified UAE registry case studies · click chapters below to jump</p>
+          </div>
+          <span class="meta-pill">16:9 YOUTUBE · 215s</span>
+        </div>
+
+        <div class="player-16x9">
+          <video id="yt-video" controls playsinline preload="metadata" poster="./thumbnail_16x9.png">
+            <source src="./skid_v3_yt_01_16x9.mp4" type="video/mp4" />
+            <track label="English" kind="subtitles" srclang="en" src="./subtitles_16x9.vtt" default />
+          </video>
+        </div>
+
+        <div class="chapters" aria-label="YouTube Lesson Chapters">
+          <button class="ch-btn" type="button" onclick="seekYt(0)"><span>0:00</span>Hook</button>
+          <button class="ch-btn" type="button" onclick="seekYt(14.8)"><span>0:15</span>Trap #1: 3% Deposit Illusion</button>
+          <button class="ch-btn" type="button" onclick="seekYt(56.2)"><span>0:56</span>Trap #2: Ask vs Real Signals</button>
+          <button class="ch-btn" type="button" onclick="seekYt(127.2)"><span>2:07</span>Trap #3: Exit Crowd Risk</button>
+          <button class="ch-btn" type="button" onclick="seekYt(164.0)"><span>2:44</span>Principle #4: Margin of Safety</button>
+          <button class="ch-btn" type="button" onclick="seekYt(196.9)"><span>3:17</span>Free SKID Tool</button>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="./skid_v3_yt_01_16x9.mp4" download>Download 16:9 MP4 (1080p)</a>
+          <a class="btn btn-secondary" href="./thumbnail_16x9.png" target="_blank" rel="noopener">Open 16:9 Thumbnail</a>
+          <a class="btn btn-secondary" href="./subtitles_16x9.srt" download>Download .SRT</a>
+        </div>
+      </article>
+
+      <!-- 9:16 VERTICAL SHORT / REEL / TIKTOK -->
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">2. Vertical Short / Reel / TikTok</h2>
+            <p class="panel-desc">1080×1920 @ 30fps · 53.7s · High-retention 9-beat whiteboard mental model</p>
+          </div>
+          <span class="meta-pill violet">9:16 SHORT · 53.7s</span>
+        </div>
+
+        <div class="player-9x16">
+          <video controls playsinline preload="metadata" poster="./cover_9x16.png">
+            <source src="./skid_v3_short_01_9x16.mp4" type="video/mp4" />
+            <track label="English" kind="subtitles" srclang="en" src="./subtitles_9x16.vtt" default />
+          </video>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="./skid_v3_short_01_9x16.mp4" download>Download 9:16 MP4</a>
+          <a class="btn btn-secondary" href="./cover_9x16.png" target="_blank" rel="noopener">Open 9:16 Cover</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="facts">
+      <div>
+        <h3>Trap #1 · Incentives &amp; Wait</h3>
+        <strong>Treppan Vision (Dubailand Res.):</strong> AED 889,000 ask · 3% booking (AED 26,670) vs AED 39,760 Day-1 gov + admin fees (60% of Day-1 cash is fees) · AED 519,820 locked before Oct 2029 keys · 46% post-handover buffer (SKID 6.6/10).
+      </div>
+      <div>
+        <h3>Trap #2 · Ask vs Market Signals</h3>
+        <strong>Dubailand:</strong> 209 built neighbors averaged AED 322,738 (2.75x gap) · <strong>Int'l City:</strong> Samana Greenfield 2 asks AED 998,823 vs AED 457,749 across 1,026 closed deals (2.2x) · <strong>Jebel Ali:</strong> Lincoln Star 5 (AED 576K, -7.7%) vs Downtown One (AED 952K, +62.1%) · <strong>Oct 2026:</strong> Ready AED 18.1B vs Off-Plan AED 16.7B.
+      </div>
+      <div>
+        <h3>Traps #3 &amp; #4 · Crowd &amp; Safety</h3>
+        <strong>Dubai Islands:</strong> Atara Velora (AED 1.8M, SKID 7.3) vs Beyond Shione (AED 2.7M, SKID 6.2) share 81 launches &amp; 0 resales · <strong>Dubailand:</strong> 57 launches (991 off-plan vs 209 resales) · <strong>Studio City:</strong> Arisha Terraces 10/0/90 plan, 391 resales, 5 rivals (SKID 6.9/10).
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      Source: Verified SKID &amp; Dubai Land Department Registry Datasets (snapshot 2026-07-07) · Market macro citation: Aurantius / Property Finder / Cresco (Nov 2026). Starting prices exclude 2%–4% registration fees. Informational only, not financial advice.
+    </p>
+  </main>
+
+  <script>
+    function seekYt(sec) {
+      const v = document.getElementById("yt-video");
+      if (!v) return;
+      v.currentTime = sec;
+      v.play().catch(() => {});
+    }
+  </script>
+</body>
+</html>
